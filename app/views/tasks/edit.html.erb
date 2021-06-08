@@ -1,15 +1,21 @@
-<h1> Edit Task </h1>
+<div class = "container">
+  <h1> Edit Task </h1>
 
-<%= form_for(@task) do |f| %>
-  <div>
-    <%= f.label :title %>
-    <%= f.text_field :title %>
-  </div>
-  <div>
-    <%= f.label :details %>
-    <%= f.text_area :details %>
-  </div>
-  <%= f.submit %>
+  <%= form_for (@task) do |f| %>
+    <div class= 'form-group'>
+      <%= f.label :title %>
+      <%= f.text_field :title %>
+    </div>
+    <div class= 'form-group'>
+      <%= f.label :details %>
+      <%= f.text_field :details %>
+    </div>
+    <div class= 'form-group'>
+    <%= f.label :completed %>
+    <%= f.text_field :completed %>
+    </div>
+     <%= f.submit 'Update', :class => 'btn btn-success' %>
 
-  <%= link_to "Back to list", tasks_path %>
-<% end %>
+    <div> <%= link_to "Back to list", tasks_path, class: 'btn btn-primary' %> </div>
+  <% end %>
+</div>

@@ -1,15 +1,19 @@
-<div class = "container">
+<div class = "container" id = "task">
   <h1> <%= @task.title %> </h1>
-  <%= link_to "Edit this task", edit_task_path, class: "btn btn-secondary" %>
   <p> <%= @task.details %></p>
-  <div>
+  <div class ="form-check">
     <% if @task.completed %>
-    <input type="checkbox" id="scales" name="scales"checked>
+      <label class="form-check-label" for = "scales"> <em> Done! </em> </label>
+      <input type="checkbox" id="scales" name="scales"checked>
     <% else %>
-    <input type="checkbox" id="hornes" name="hornes">
+      <label class="form-check-label" for = "hornes"> <em> Mark as done </em> </label>
+      <input type="checkbox" id="hornes" name="hornes">
     <% end %>
   </div>
-  <%= link_to "Back to the tasks", tasks_path %>
+  <div>
+    <%= link_to "Edit this task", edit_task_path, class: "btn btn-secondary" %>
+    <%= link_to "Back to the tasks", tasks_path, class: "btn btn-primary"%>
+  </div>
 </div>
 
 
